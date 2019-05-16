@@ -4,12 +4,19 @@ module.exports = {
     index,
     show,
     new: newSkills,
-    create
+    create,
+    deleteSkill
+};
+
+function deleteSkill(req, res) {
+    Skill.deleteSkill(req.params.id);
+    console.log(req.params.id)
+    res.redirect('/skills');
 };
 
 function create(req, res) {
     res.redirect('/skills');
-    Skill.create(req, res);
+    Skill.create(req.body);
 };
 
 function newSkills(req, res) {

@@ -8,10 +8,15 @@ module.exports = {
     getAll,
     getOne,
     create,
+    deleteSkill
 };
 
+function deleteSkill(id) {
+    skills.splice(id, 1);
+}
+
 function create(skill) {
-    skills.push(todo);
+    skills.push(skill);
 };
 
 function getOne(id) {
